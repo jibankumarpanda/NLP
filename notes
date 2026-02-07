@@ -1,0 +1,120 @@
+# we need to study 
+
+text processing 1 is the process of converting text into a format that can be processed by a computer. 
+its besically tokenization, stop words removal, stemming, lemmatization, etc.
+Bow library , TfidfVectorizer, CountVectorizer are used for text processing.
+text processing 2 is the process of converting text into a format that can be processed by a computer. 
+its besically Bow library , TfidfVectorizer, CountVectorizer are used for text processing.
+uniquerac , bigrams, trigrams are used for text processing.
+text processing 3 is the process of converting text into a format that can be processed by a computer. 
+its besically Bow library , TfidfVectorizer, CountVectorizer are used for text processing.
+word2vec,avg word2vec, glove, fasttext are used for text processing.
+ml models used for text processing are svm, random forest, xgboost, etc.
+deep learning models used for text processing are lstm, gru, etc.
+RNN,LSTM,GRU are used for text processing.
+Word Embedding is used for text processing.
+Bidirectional LSTM is used for text processing.
+atention models are used for text processing.
+encoders and decoders are used for text processing.
+transformers are used for text processing.
+for ML we need NLTR , SPACY, textblob, etc.
+for deep learning we need tensorflow, pytorch, keras, etc.
+
+# NLP
+# Text Processing
+1. Tokenization
+2. Stop words removal
+3. Stemming
+4. Lemmatization
+
+1. now what is tokenization
+ans. Tokenization is the process of breaking down a text into smaller units called tokens.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the tokens are "the", "quick", "brown", "fox", "jumps", "over", "the", "lazy", "dog".
+advantages of tokenization: it is fast and simple.
+disadvantages of tokenization: it may not always be accurate.and its removing the meaning of word.
+
+2. now what is stop words removal
+ans. Stop words removal is the process of removing the most common words in a language from a text.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the stop words are "the" and "over".
+advantages of stop words removal: it is fast and simple.
+disadvantages of stop words removal: it may not always be accurate.and its removing the meaning of word.
+
+3. now what is stemming
+ans. Stemming is the process of reducing a word to its base or root form.
+example: in the sentence "running, runs, ran", the stem is "run".
+advantages of stemming: it is fast and simple.
+disadvantages of stemming: it may not always be accurate.and its removing the meaning of word.
+
+4. now what is lemmatization
+ans. Lemmatization is the process of reducing a word to its base or root form.
+example: in the sentence "running, runs, ran", the lemma is "run".
+advantages of lemmatization: it is fast and simple.
+disadvantages of lemmatization: it may not always be accurate.and its removing the meaning of word.
+
+# Text processing 2
+# Words to Vectors
+1. Bow(Bag of Words)
+2. Tfidf(Term Frequency Inverse Document Frequency)
+3. Count Vectorizer
+4. Word2Vec
+5. Avg Word2Vec
+6. Glove
+7. FastText
+8. Doc2Vec
+
+1. now what is bow
+ans. Bow is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the bow is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of bow: it is fast and simple.
+disadvantages of bow: it may not always be accurate.and its removing the meaning of word.
+
+2. now what is tfidf
+ans. Tfidf is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the tfidf is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of tfidf: it is fast and simple.
+disadvantages of tfidf: it may not always be accurate.and its removing the meaning of word.
+
+3. now what is count vectorizer
+ans. Count vectorizer is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the count vectorizer is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of count vectorizer: it is fast and simple.
+disadvantages of count vectorizer: it may not always be accurate.and its removing the meaning of word.
+
+4. now what is word2vec
+ans. Word2vec is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the word2vec is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of word2vec: it is fast and simple.
+disadvantages of word2vec: it may not always be accurate.and its removing the meaning of word.
+
+5. now what is avg word2vec
+ans. Avg word2vec is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the avg word2vec is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of avg word2vec: it is fast and simple.
+disadvantages of avg word2vec: it may not always be accurate.and its removing the meaning of word.
+
+6. now what is glove
+ans. Glove is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the glove is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of glove: it is fast and simple.
+disadvantages of glove: it may not always be accurate.and its removing the meaning of word.
+
+7. now what is fasttext
+ans. Fasttext is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the fasttext is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of fasttext: it is fast and simple.
+disadvantages of fasttext: it may not always be accurate.and its removing the meaning of word.
+
+8. now what is doc2vec
+ans. Doc2vec is the process of converting a text into a vector of numbers.
+example: in the sentence "the quick brown fox jumps over the lazy dog", the doc2vec is [1, 1, 1, 1, 1, 1, 1, 1, 1].
+advantages of doc2vec: it is fast and simple.
+disadvantages of doc2vec: it may not always be accurate.and its removing the meaning of word.
+
+# Basic terminologies In NLP
+
+1. CORPUS
+2. Document
+3. Vocabulary or Lexicon
+4. WORDS
+
+
