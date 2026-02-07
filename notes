@@ -117,4 +117,80 @@ disadvantages of doc2vec: it may not always be accurate.and its removing the mea
 3. Vocabulary or Lexicon
 4. WORDS
 
+1. One hot Encoding
+example: [ A man eat food
+        cat eat food
+        people watch krish YT ]
+
+in this corpus is [ A man eat food
+        cat eat food
+        people watch krish YT ]
+
+in this document is [ A man eat food
+        cat eat food
+        people watch krish YT ]
+
+in this  count of vocabulary is 9.
+{
+    A
+    man
+    eat
+    food
+    cat
+    people
+    watch
+    krish
+    YT
+}
+
+in this words is [ A man eat food
+        cat eat food
+        people watch krish YT ]
+
+# now one hot encoded format D1 for ( 9 vocabularys) 
+                                [[ 1,0,0,0,0,0,0,0,0
+                                   0,1,0,0,0,0,0,0,0
+                                   0,0,1,0,0,0,0,0,0
+                                   0,0,0,1,0,0,0,0,0
+                                   0,0,0,0,1,0,0,0,0
+                                   0,0,0,0,0,1,0,0,0
+                                   0,0,0,0,0,0,1,0,0
+                                   0,0,0,0,0,0,0,1,0
+                                   0,0,0,0,0,0,0,0,1
+                                ]]   
+
+                                
+# advantages of one hot encoding
+1. it is fast and simple.
+2. it is easy to understand.
+
+# disadvantages of one hot encoding
+1. it is not efficient for large datasets.
+2. it is not efficient for large vocabularies.
+3. it is not efficient for large documents.
+4. it is sparse matrix.
+5. out of vocabulary words are not handled.
+6 . not fixed size vector.
+
+ok in case of one hot encoding we dont need all 9 vocabularys for each line lets take each vocabulary
+# like that
+D1 [[ 1,0,0,0]
+    [0,1,0,0]
+    [0,0,1,0]
+    [0,0,0,1]]
+
+D2 [[ 1,0,0,]
+    [0,1,0,]
+    [0,0,1,]]
+
+D3 [[ 1,0,0,0]
+    [0,1,0,0]
+    [0,0,1,0]
+    [0,0,0,1]]
+
+ok so if we see the D2 the there only three words acording the example of one hot encoding .....
+so we can say that because of the vocabulary are not stable or they are decrising so we cant train the model .
+this is called (OOV) Out of Vocabulary.
+
+
 
