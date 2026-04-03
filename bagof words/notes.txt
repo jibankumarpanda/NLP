@@ -47,6 +47,15 @@ so in this case of sentences we can see that "eats" and "food" are common words 
 but the words "cat", "bat", "kalu" are unique to each sentence.
 
 
+#the formula
+
+tf (term frequency)= number of times the term appears in the document / total number of terms in the document
+idf (inverse document frequency) = log(total number of documents / number of documents containing the term)
+tf-idf = tf * idf
+
+
+
+
 
 
 
