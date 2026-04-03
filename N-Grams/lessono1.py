@@ -36,6 +36,17 @@ for i in range(len(sentences)):
 print(corpus)
 
 ## steming the sentences
+stemmer = PorterStemmer()
+stemmed_corpus = []
 for i in corpus:
+    stemmed_words = []
     for word in i.split():
-        print(stemmer.stem(word))
+        stemmed_word = stemmer.stem(word)
+        stemmed_words.append(stemmed_word)
+    stemmed_sentence = ' '.join(stemmed_words)
+    stemmed_corpus.append(stemmed_sentence)
+
+print("Original corpus:")
+print(corpus)
+print("\nStemmed corpus:")
+print(stemmed_corpus)
