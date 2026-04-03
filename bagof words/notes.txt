@@ -111,7 +111,17 @@ sent2    0      0.088  0
 sent3    0.059  0.059  0
 
 
+acording this data set we can say that "boy" and "girl" are more important than "good" because they have higher TF-IDF values.
+and we can train a model by this data.
 
+Advantages:(Intuitive, Easy to implement)
+- It helps to identify the most important words in a document.
+- It helps to identify the most important documents in a collection.
+- It helps to identify the most important terms in a corpus.
+Disadvantages:(Spasity,out of vocabulary,Does not consider context, Does not consider meaning, Does not consider order)
+- It does not consider the context of the words.
+- It does not consider the meaning of the words.
+- It does not consider the order of the words.
 
 
 
