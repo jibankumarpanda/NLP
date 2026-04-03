@@ -1,0 +1,175 @@
+# N-Grams lessono1.py - Detailed Code Explanation
+
+## IMPORTS AND SETUP
+
+### Lines 1-4: Basic imports
+```python
+paragraph = "PM Narendra Modi is a 2019 Indian Hindi-language propaganda film..."
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
+```
+
+**Explanation:**
+- `paragraph`: String variable containing sample text for NLP processing
+- `import nltk`: Imports Natural Language Toolkit library for text processing
+- `from nltk.stem import PorterStemmer`: Imports PorterStemmer algorithm for reducing words to root form
+- `from nltk.corpus import stopwords`: Imports stopwords list (common words like 'the', 'is', 'a' to be removed)
+
+## TOKENIZATION SECTION
+
+### Lines 6-10: Sentence tokenization
+```python
+## Tokenization -- converts paragraph-sentences-words.
+nltk.download("punkt_tab")
+sentences = nltk.sent_tokenize(paragraph)
+print(sentences)
+print(type(sentences))
+```
+
+**Explanation:**
+- `nltk.download("punkt_tab")`: Downloads NLTK's pre-trained sentence tokenizer model
+- `sentences = nltk.sent_tokenize(paragraph)`: Splits paragraph into individual sentences
+- `print(sentences)`: Displays the list of sentences
+- `print(type(sentences))`: Shows data type (list) - confirms tokenization returns a list
+
+## WORD PROCESSING SECTION
+
+### Lines 12-15: Stemming demonstration
+```python
+## now we are changing it into words
+stemmer = PorterStemmer()
+stemmer.stem("loving")
+print(stemmer.stem("loving"))
+```
+
+**Explanation:**
+- `stemmer = PorterStemmer()`: Creates PorterStemmer object
+- `stemmer.stem("loving")`: Applies stemming algorithm to reduce "loving" to "love"
+- `print(stemmer.stem("loving"))`: Displays stemmed result "love"
+
+### Lines 17-22: Lemmatization demonstration
+```python
+from nltk.stem import WordNetLemmatizer
+nltk.download("wordnet")
+nltk.download("stopwords")
+lemmatizer = WordNetLemmatizer()
+lemmatizer.lemmatize("goes")
+print(lemmatizer.lemmatize("goes"))
+```
+
+**Explanation:**
+- `from nltk.stem import WordNetLemmatizer`: Imports WordNetLemmatizer for dictionary-based word reduction
+- `nltk.download("wordnet")`: Downloads WordNet lexical database for lemmatization
+- `nltk.download("stopwords")`: Downloads stopwords corpus for common word removal
+- `lemmatizer = WordNetLemmatizer()`: Creates WordNetLemmatizer object
+- `lemmatizer.lemmatize("goes")`: Applies lemmatization to reduce "goes" to "go"
+- `print(lemmatizer.lemmatize("goes"))`: Displays lemmatized result "go"
+
+## CORPUS CREATION SECTION
+
+### Lines 24-25: Sentence count
+```python
+len(sentences)
+print(len(sentences))
+```
+
+**Explanation:**
+- `len(sentences)`: Counts total number of sentences (returns 5)
+- `print(len(sentences))`: Displays the count (5 sentences)
+
+### Lines 27-36: Text preprocessing pipeline
+```python
+import re
+corpus = []
+for i in range(len(sentences)):
+    review = re.sub('[^a-zA-Z]', ' ', sentences[i])
+    review = review.lower()
+    review = review.split()
+    review = [lemmatizer.lemmatize(word) for word in review if not word in set(stopwords.words('english'))]
+    review = ' '.join(review)
+    corpus.append(review)
+print(corpus)
+```
+
+**Line-by-line explanation:**
+
+**Line 27: `import re`**
+- Imports regular expressions library for pattern matching and text cleaning
+
+**Line 28: `corpus = []`**
+- Creates empty list to store processed sentences (cleaned corpus)
+
+**Line 29: `for i in range(len(sentences)):`**
+- Starts loop to process each sentence individually
+- `len(sentences)` = 5, so loop runs 5 times (i = 0,1,2,3,4)
+
+**Line 30: `review = re.sub('[^a-zA-Z]', ' ', sentences[i])`**
+- Uses regex to remove all non-alphabetic characters
+- `[^a-zA-Z]` matches anything that's NOT a letter (numbers, punctuation, brackets)
+- Replaces them with space ' '
+- Example: "PM Narendra Modi..." → "PM Narendra Modi "
+
+**Line 31: `review = review.lower()`**
+- Converts entire sentence to lowercase
+- Example: "PM Narendra Modi" → "pm narendra modi"
+
+**Line 32: `review = review.split()`**
+- Splits sentence into list of individual words
+- Example: "pm narendra modi" → ['pm', 'narendra', 'modi']
+
+**Line 33: `review = [lemmatizer.lemmatize(word) for word in review if not word in set(stopwords.words('english'))]`**
+- **List comprehension** that processes each word:
+- `stopwords.words('english')`: Gets list of English stopwords
+- `set(stopwords.words('english'))`: Converts to set for faster lookup
+- `if not word in set(...)`: Keeps word only if it's NOT a stopword
+- `lemmatizer.lemmatize(word)`: Applies lemmatization to each remaining word
+- Example: ['pm', 'narendra', 'modi', 'is'] → ['pm', 'narendra', 'modi'] (removes 'is')
+
+**Line 34: `review = ' '.join(review)`**
+- Joins words back into single string with spaces
+- Example: ['pm', 'narendra', 'modi'] → "pm narendra modi"
+
+**Line 35: `corpus.append(review)`**
+- Adds cleaned sentence to corpus list
+- Builds final processed corpus
+
+**Line 36: `print(corpus)`**
+- Displays final cleaned corpus showing all processed sentences
+
+## STEMMING SECTION (STARTED)
+
+### Lines 38-41: Beginning of stemming loop
+```python
+## steming the sentences
+for i in corpus:
+    for word in i.split():
+```
+
+**Explanation:**
+- `for i in corpus:`: Loops through each cleaned sentence in corpus
+- `for word in i.split():`: Nested loop to process each word in each sentence
+- This section appears incomplete - likely intended to apply stemming to each word
+
+## COMPLETE WORKFLOW SUMMARY
+
+1. **Input**: Raw paragraph text
+2. **Tokenization**: Split into 5 sentences
+3. **Demonstration**: Show stemming vs lemmatization
+4. **Preprocessing Pipeline**:
+   - Remove non-alphabetic characters
+   - Convert to lowercase
+   - Split into words
+   - Remove stopwords
+   - Apply lemmatization
+   - Rejoin to clean sentences
+5. **Output**: Clean corpus ready for NLP analysis
+
+## KEY CONCEPTS DEMONSTRATED
+
+- **Tokenization**: Breaking text into smaller units
+- **Stemming**: Algorithmic word reduction (loving → love)
+- **Lemmatization**: Dictionary-based word reduction (goes → go)
+- **Stopwords Removal**: Eliminating common words
+- **Regular Expressions**: Pattern-based text cleaning
+- **Text Normalization**: Converting to standard format
