@@ -80,12 +80,35 @@ boy     0.176     0.176     0.176
 girl    0.176     0.176     0.176
 good    0         0         0
 
+#// now lets multiply the tf and idf values (TF-IDF = TF × IDF)
 
+TF values from earlier:
+        sent 1  sent 2  sent 3
+boy     1/2     0       1/3
+girl    0       1/2     1/3
+good    1/2     1/2     1/3
 
+IDF values:
+boy = 0.176, girl = 0.176, good = 0
 
+TF-IDF calculations:
+- sent1 boy: (1/2) × 0.176 = 0.088
+- sent1 girl: 0 × 0.176 = 0
+- sent1 good: (1/2) × 0 = 0
 
+- sent2 boy: 0 × 0.176 = 0
+- sent2 girl: (1/2) × 0.176 = 0.088
+- sent2 good: (1/2) × 0 = 0
 
+- sent3 boy: (1/3) × 0.176 = 0.059
+- sent3 girl: (1/3) × 0.176 = 0.059
+- sent3 good: (1/3) × 0 = 0
 
+Final TF-IDF matrix:
+        boy    girl   good
+sent1    0.088  0      0
+sent2    0      0.088  0
+sent3    0.059  0.059  0
 
 
 
