@@ -1,0 +1,34 @@
+step 1:
+#bag of words from sentences lets take 3 sentences
+1. He is good boy
+2. She is good girl
+3. He and she are good
+
+step 2:
+#now lets take the stop of words
+
+stop words =  { sentence 1 : good boy }
+              { sentence 2 : good girl }
+              { sentence 3 : boy girl good }
+
+
+step 3:
+#now lets create the vocabulary
+vocabulary = { boy, girl, good }
+ 
+And the Frequency of all them like in this {good = 3, boy = 2, girl = 2}
+
+Step 4:
+
+# now lets create the matrix the words are apearing how much time in a sentence acording that number 
+
+    f1   f2  f3
+boy  1    0   1
+girl 0    1   1
+good 1    1   1
+
+in this case its difficult to understand the pattern 
+so we use the tf(term frequency)-idf(inverse document frequency)
+
+
+
