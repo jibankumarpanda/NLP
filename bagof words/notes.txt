@@ -30,5 +30,24 @@ good 1    1   1
 in this case its difficult to understand the pattern 
 so we use the tf(term frequency)-idf(inverse document frequency)
 
+let take sentence 1 : "good boy"
+         sentence 2 : "good girl"
+         sentence 3 : "good boy girl"
+
+in this case we can see that "good" is repeating in all the sentences so we can say that "good" is not a good word to differentiate between the sentences.
+and there is no rare case or rare words in the sentences.
+so we use tf-idf to solve this problem.
+
+example:
+cat eats food
+bat eats food 
+kalu eats food
+
+so in this case of sentences we can see that "eats" and "food" are common words in all the sentences.
+but the words "cat", "bat", "kalu" are unique to each sentence.
+
+
+
+
 
 
