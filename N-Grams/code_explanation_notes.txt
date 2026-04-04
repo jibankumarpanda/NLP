@@ -137,19 +137,87 @@ print(corpus)
 **Line 36: `print(corpus)`**
 - Displays final cleaned corpus showing all processed sentences
 
-## STEMMING SECTION (STARTED)
+## STEMMING SECTION (COMPLETED)
 
-### Lines 38-41: Beginning of stemming loop
+### Lines 38-52: Complete stemming implementation
 ```python
 ## steming the sentences
+stemmer = PorterStemmer()
+stemmed_corpus = []
 for i in corpus:
+    stemmed_words = []
     for word in i.split():
+        stemmed_word = stemmer.stem(word)
+        stemmed_words.append(stemmed_word)
+    stemmed_sentence = ' '.join(stemmed_words)
+    stemmed_corpus.append(stemmed_sentence)
+
+print("Original corpus:")
+print(corpus)
+print("\nStemmed corpus:")
+print(stemmed_corpus)
 ```
 
-**Explanation:**
-- `for i in corpus:`: Loops through each cleaned sentence in corpus
-- `for word in i.split():`: Nested loop to process each word in each sentence
-- This section appears incomplete - likely intended to apply stemming to each word
+**Line-by-line explanation:**
+
+**Line 38: `## steming the sentences`**
+- Comment indicating beginning of stemming process
+
+**Line 39: `stemmer = PorterStemmer()`**
+- Creates new PorterStemmer object for stemming operations
+- Note: We already created one earlier, but creating again for clarity
+
+**Line 40: `stemmed_corpus = []`**
+- Creates empty list to store stemmed sentences
+- Will contain the same sentences but with words reduced to their stems
+
+**Line 41: `for i in corpus:`**
+- Loops through each cleaned sentence from the original corpus
+- Processes each sentence individually
+
+**Line 42: `stemmed_words = []`**
+- Creates temporary list to store stemmed words for current sentence
+- Resets for each new sentence
+
+**Line 43: `for word in i.split():`**
+- Splits current sentence into individual words
+- Loops through each word in the sentence
+
+**Line 44: `stemmed_word = stemmer.stem(word)`**
+- Applies PorterStemmer algorithm to reduce word to its stem/root
+- Example: "language" → "languag", "directed" → "direct"
+
+**Line 45: `stemmed_words.append(stemmed_word)`**
+- Adds stemmed word to temporary list
+- Builds list of stemmed words for current sentence
+
+**Line 46: `stemmed_sentence = ' '.join(stemmed_words)`**
+- Joins stemmed words back into sentence string
+- Reconstructs sentence with spaces between words
+
+**Line 47: `stemmed_corpus.append(stemmed_sentence)`**
+- Adds stemmed sentence to final stemmed corpus list
+- Builds complete stemmed corpus
+
+**Lines 49-52: Output comparison**
+```python
+print("Original corpus:")
+print(corpus)
+print("\nStemmed corpus:")
+print(stemmed_corpus)
+```
+- Displays both original and stemmed corpora for comparison
+- Shows the effect of stemming on each sentence
+
+**Stemming Examples from Output:**
+- "language" → "languag"
+- "directed" → "direct" 
+- "produced" → "produc"
+- "hagiography" → "hagiographi"
+- "minister" → "minist"
+- "since" → "sinc"
+- "receiving" → "receiv"
+- "overwhelmingly" → "overwhelmingli"
 
 ## COMPLETE WORKFLOW SUMMARY
 
