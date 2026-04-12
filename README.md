@@ -6,5 +6,4 @@ Text preprocessing (tokenization, stopword removal, stemming, lemmatization)
 Feature extraction (Bag of Words, TF-IDF, Word Embeddings)
 Machine Learning models (Naive Bayes, Logistic Regression, SVM)
 Deep Learning models (LSTM, RNN, Transformers - optional)
-Model evaluation (Accuracy, Precision, Recall, F1-score)
-Clean and modular code structure
+
